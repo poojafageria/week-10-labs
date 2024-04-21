@@ -1,0 +1,37 @@
+<!-- updatelocation.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Pass a JavaScript variable to a partial in EJS -->
+  <%- include('partials/head.ejs', { title: "Update page" }) %>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="content">
+    <div class="update">
+      <h2>Update Location</h2>
+      <form action="/single-location/<%= location._id %>?_method=PUT" method="POST">
+        
+        <label>Name:</label>
+        <input type="text" value="<%= location.name %>" id="name" name="name" required />
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required><%= location.address %></textarea>
+
+        <label>Latitude:</label
+          ><input type="number" value="" id="latitude" name="latitude" required />
+
+          <label>Longitude:</label
+            ><input type="number" value="" id="longitude" name="longitude" required /> 
+
+        
+
+       
+
+        <button type="submit">Update Location</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
